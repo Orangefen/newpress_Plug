@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "slug": "content-age",
+  "name": "文章时效提醒",
+  "version": "1.0.0",
+  "description": "为超过设定天数未更新的文章显示温和提醒；判断与文案由独立 WASM 插件执行。",
+  "author": "NewPress 官方",
+  "license": "Apache-2.0",
+  "newpress": ">=0.1.0",
+  "runtime": "wasm/core-v1",
+  "entry": "plugin.wasm",
+  "capabilities": ["content.read", "settings.read", "render.fragment"],
+  "hooks": {"content.render": ["np_handle"], "admin.action": ["np_handle"]},
+  "settings": [
+    {"key":"days","label":"提醒阈值（天）","type":"number","default":180,"min":1,"max":36500,"help":"文章最后更新时间超过此天数才显示提醒。"},
+    {"key":"title","label":"提醒标题","type":"text","default":"留意内容时效","max":80},
+    {"key":"message","label":"提醒内容","type":"text","default":"这篇文章已有一段时间未更新，部分信息可能发生变化，使用时请结合实际情况。","max":500}
+  ]
+}

@@ -32,3 +32,10 @@ NewPress 的独立插件分发仓库。主程序与主题源码保留在各自�
 - `deployment.env.example`：双源配置示例，仅包含公开信息。
 
 私钥、站点数据、API 密钥和访问令牌不属于这个仓库。发布与镜像同步步骤见 [PUBLISHING.md](PUBLISHING.md)。
+
+
+## 独立 WASM 插件通道
+
+`catalog.runtime-v1.json` 为支持业务 ABI v1 的新版 NewPress 使用，包含评论来源和独立的「文章时效提醒」。旧 `catalog.json` 保留兼容，不包含新配置字段。两个目录的签名公钥相同。
+
+「文章时效提醒」默认不安装，安装后默认停用。打开设置与权限页，保存阈值、标题、文案和授权，再启用。源码与构建方法在 `sources/content-age/1.0.0/`，接口说明见 `PLUGIN_ABI.md`。插件的业务判断在 WASM 中执行。

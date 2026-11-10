@@ -32,4 +32,6 @@ go run ./cmd/pluginmarket -key /secure/newpress-plugin-signing.key -out /tmp/new
 
 签名公钥是站点信任根。妥善离线备份私钥；更换公钥需要通过可信的主程序发布或部署配置更新完成，不能只依赖镜像中的新公钥文件。本文不记录私钥的本机路径，也不要求将私钥放到 GitHub/Gitee 或 CI。
 
-目前发布工具只生成评论来源插件包。通用插件运行时及保留数据的原地升级仍需在主程序实现后再发布。
+发布工具已支持 `-packages` 传入逗号分隔的独立 WASM ZIP，并使用 `-catalog-name catalog.runtime-v1.json` 生成新通道目录。旧 `catalog.json` 保留，以兼容不认识配置 schema 的旧主程序。使用同一份签名目录同步两端，保留旧包。通用业务接口见 PLUGIN_ABI.md；保留数据的原地升级尚未实现。
+
+当前业务通道序号为 2，文章时效提醒版本 1.0.0。以后发布需递增序号，不能原地改同版本 ZIP。
