@@ -13,8 +13,8 @@ git push -u origin main
 git push gitee main
 ```
 
-4. 分别匿名访问两个 raw 目录和 ZIP，确认不是登录页、拦截页或跳转响应。Gitee 仓库是否真正公开，以匿名 raw GET 为准。
-5. 配置 `deployment.env.example` 中的两个目录 URL 和公钥，执行后台刷新、安装、启用、停用和卸载检查。
+4. 分别匿名访问两个 raw 目录和 ZIP，确认不是登录页或拦截页。Gitee 目前会跳转到 `raw.giteeusercontent.com` 下同一路径，NewPress 只允许这一次带 `signature` 参数的官方跳转，最终文件仍需通过签名与包校验。Gitee 仓库是否真正公开，以完整匿名下载流程为准。
+5. 更新部署配套的 NewPress 主程序（已内置双源及公钥），或按 `deployment.env.example` 显式配置，执行后台刷新、安装、启用、停用和卸载检查。
 
 ## 后续发布
 
