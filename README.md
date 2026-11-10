@@ -5,7 +5,7 @@ NewPress 的独立插件分发仓库。主程序与主题源码保留在各自�
 | 来源 | 用途 |
 | --- | --- |
 | `Orangefen/newpress_Plug`（GitHub） | 官方发布源 |
-| `chunyangnet_0/newpress_Plug`（Gitee） | 面向无法稳定访问 GitHub 的国内服务器的镜像 |
+| `chunyangnet_0/newpress_plug`（Gitee） | 面向无法稳定访问 GitHub 的国内服务器的镜像 |
 
 两个仓库应推送同一提交。NewPress 从部署服务器并行检测来源，验证签名后优先使用较新的目录，同版本按响应时间选择。包下载失败会切换到目录内容一致的可用镜像。浏览者无需选择源，也不会因访问插件市场而被要求登录 GitHub 或 Gitee。
 
