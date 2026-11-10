@@ -1,0 +1,14 @@
+# Never publish credentials or private signing material.
+.env
+.env.local
+*.key
+*.pem
+*.p12
+*.pfx
+*token*
+*secret*
+*.log
+*.tmp
+*.bak
+.DS_Store
+Thumbs.db
